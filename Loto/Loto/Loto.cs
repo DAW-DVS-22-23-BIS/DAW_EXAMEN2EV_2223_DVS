@@ -52,14 +52,19 @@ namespace LotoClassNS
         ///<remarks>No tiene por que ser válida.</remarks>
         public loto(int[] misnums)  
         {
-            for (int i=0; i<MAX_NUMEROS; i++)
-                if (misnums[i]>=NUMERO_MENOR && misnums[i]<=NUMERO_MAYOR) {
+            for (int i = 0; i < MAX_NUMEROS; i++)
+                if (misnums[i] >= NUMERO_MENOR && misnums[i] <= NUMERO_MAYOR) {
                     int j;
-                    for (j=0; j<i; j++) 
-                        if (misnums[i]==Nums[j])
+
+                    for (j = 0; j < i; j++)
+                    {
+                        if (misnums[i] == Nums[j])
                             break;
+                    }
                     if (i==j)
-                        Nums[i]=misnums[i]; // validamos la combinación
+                    {
+                        Nums[i] = misnums[i]; // validamos la combinación
+                    }     
                     else {
                         ok=false;
                         return;
