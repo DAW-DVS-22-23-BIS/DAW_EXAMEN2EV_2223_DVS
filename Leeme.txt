@@ -1,0 +1,7 @@
+Por favor, he tenido que iniciar el examen desde cero debido a que al cambiar el nombre
+de la clase, por algún extraño motivo no me dejabana compilar.
+Al rehacer un fork con una cuenta nueva, iba muy justo de tiempo, por lo que en el archivo
+con el que he empezado a trabajar, no he podido implementar las correciones de código.
+Pese a ello, si he logrado documentar mediante pantallazos las que he conseguido
+con el archivo original antes de dañarlo. Por favor, tenlo en cuenta a la hora de corregirlo.
+Muchas gracias.

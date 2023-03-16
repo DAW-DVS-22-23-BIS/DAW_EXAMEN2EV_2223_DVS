@@ -19,18 +19,19 @@ namespace LotoClassNS
             set => _nums = value; 
         }
 
-        // En el caso de que el constructor sea vacío, se genera una combinación aleatoria correcta
-        //
+        ///<summary>
+        /// En el caso de que el constructor sea vacío, se genera una combinación aleatoria correcta
+        ///</summary>
         public loto()
         {
             Random r = new Random();    // clase generadora de números aleatorios
 
-            int i=0, j, num;
+            int i = 0, j, num;
 
             do             // generamos la combinación
             {                       
                 num = r.Next(NUMERO_MENOR, NUMERO_MAYOR + 1);     // generamos un número aleatorio del 1 al 49
-                for (j=0; j<i; j++)    // comprobamos que el número no está
+                for (j = 0; j<i; j++)    // comprobamos que el número no está
                     if (Nums[j]==num)
                         break;
                 if (i==j)               // Si i==j, el número no se ha encontrado en la lista, lo añadimos
@@ -43,9 +44,13 @@ namespace LotoClassNS
             ok=true;
         }
 
-        // La segunda forma de crear una combinación es pasando el conjunto de números
-        // misnums es un array de enteros con la combinación que quiero crear (no tiene porqué ser válida)
-        public loto(int[] misnums)  // misnumeros: combinación con la que queremos inicializar la clase
+        /// <summary>
+        /// La segunda forma de crear una combinación es pasando el conjunto de números
+        /// </summary>
+        /// <param name="misnums">Array de eneros con la commbinación que quiero crear.
+        ///<value>Combinacion con la que queremos inicializar la clase</param>
+        ///<remarks>No tiene por que ser válida.</remarks>
+        public loto(int[] misnums)  
         {
             for (int i=0; i<MAX_NUMEROS; i++)
                 if (misnums[i]>=NUMERO_MENOR && misnums[i]<=NUMERO_MAYOR) {
@@ -68,9 +73,12 @@ namespace LotoClassNS
 	    ok=true;
         }
 
-        // Método que comprueba el número de aciertos
-        // premi es un array con la combinación ganadora
-        // se devuelve el número de aciertos
+        ///</summary>
+        /// Método que comprueba el número de aciertos
+        ///<summary>
+        ///<param name="premiado">Es un array con la combinación de números ganadora</param>
+        ///<example>1 2 3 4 5 6</example>
+        ///<returns>Se devuelve el número de aciertos</returns>
         public int comprobar(int[] premi)
         {
             int a=0;                    // número de aciertos
